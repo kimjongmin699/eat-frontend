@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+.input {
+    @apply focus:outline-none focus:border-gray-500 p-3 border-2 text-lg font-light border-gray-200 transition-colors;
+}
+.btn {
+    @apply text-lg font-medium focus:outline-none text-white py-4 transition-colors bg-green-300 hover:bg-green-500;
+}
+
+@tailwind utilities;
