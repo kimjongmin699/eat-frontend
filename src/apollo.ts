@@ -1,8 +1,6 @@
 import {
   ApolloClient,
   InMemoryCache,
-  ApolloProvider,
-  gql,
   makeVar,
   createHttpLink,
   split,
@@ -72,3 +70,5 @@ export const client = new ApolloClient({
     },
   }),
 })
+
+//https://eat-backend-jm.herokuapp.com

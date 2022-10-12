@@ -28,7 +28,7 @@ export const DishOptionFront: React.FC<IDishOptionProps> = ({
     <div
       onClick={onClick}
       className={`flex border items-center ${
-        isSelected ? 'bg-red-400 rounded-lg' : 'hover:bg-red-100'
+        isSelected ? 'border-red-600 border-2' : 'hover:border-red-600 border-2'
       }`}
     >
       <span className="mr-2 px-5 ">{name}</span>

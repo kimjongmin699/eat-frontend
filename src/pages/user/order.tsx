@@ -9,7 +9,6 @@ import {
   GetOrderQueryVariables,
   OrderStatus,
   OrderUpdatesSubscription,
-  OrderUpdatesSubscriptionVariables,
   UserRole,
 } from '../../graphql/__generated__'
 import { useMe } from '../../hooks/useMe'
