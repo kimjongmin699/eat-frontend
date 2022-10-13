@@ -20,7 +20,7 @@ export const wsLink = new GraphQLWsLink(
     url:
       process.env.NODE_ENV === 'production'
         ? 'wss://eat-backend-jm.herokuapp.com/graphql'
-        : `ws:localhost:4000/graphql`,
+        : `ws://localhost:4000/graphql`,
     connectionParams: {
       'x-jwt': authTokenVar() || '',
     },
@@ -31,7 +31,7 @@ const httpLink = createHttpLink({
   uri:
     process.env.NODE_ENV === 'production'
       ? 'https://eat-backend-jm.herokuapp.com/graphql'
-      : "http:localhost:4000/graphql",
+      : 'http://localhost:4000/graphql',
 })
 
 const authLink = setContext((_, { headers }) => {
