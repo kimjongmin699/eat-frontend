@@ -17,6 +17,7 @@
     "@types/react-dom": "^18.0.6",
     "@types/react-router-dom": "^5.3.3",
     "apollo": "^2.34.0",
+    "cross-env": "^7.0.3",
     "google-map-react": "^2.2.0",
     "graphql": "^16.6.0",
     "graphql-ws": "^5.11.2",
@@ -31,10 +32,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "tailwind:build": "npx tailwindcss-cli@latest build -i ./src/styles/tailwind.css -o ./src/styles/styles.css",
+    "tailwind:prodbuild":"cross-env NODE_ENV=production npm run tailwind:build",
+    "tailwind:build": " npx tailwindcss-cli@latest build -i ./src/styles/tailwind.css -o ./src/styles/styles.css",
     "start": "npm run generate & react-scripts start",
     "build": "CI=false react-scripts build",
-    "prebuild": "npm run tailwind:build",
+    "prebuild": "npm run tailwind:prodbuild",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "generate": "graphql-codegen"
