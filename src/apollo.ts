@@ -17,7 +17,10 @@ export const authTokenVar = makeVar(token)
 
 export const wsLink = new GraphQLWsLink(
   createClient({
-    url: 'ws://eat-backend-jm.herokuapp.com/graphql',
+    url:
+      process.env.NODE_ENV === 'production'
+        ? 'ws://eat-backend-jm.herokuapp.com/graphql'
+        : `ws:localhost:4000/graphql`,
     connectionParams: {
       'x-jwt': authTokenVar() || '',
     },
@@ -25,7 +28,10 @@ export const wsLink = new GraphQLWsLink(
 )
 
 const httpLink = createHttpLink({
-  uri: 'https://eat-backend-jm.herokuapp.com/graphql',
+  uri:
+    process.env.NODE_ENV === 'production'
+      ? 'https://eat-backend-jm.herokuapp.com/graphql'
+      : `http:localhost:4000/graphql`,
 })
 
 const authLink = setContext((_, { headers }) => {
